@@ -1,13 +1,14 @@
 import os
 from crewai import Agent
 from tools import yt_tool
-from dotenv import load_dotenv
+from dotenv import load_dotenv 
 
 
 load_dotenv()
 OPENAI_API_KEY=os.getenv('OPENAI_API_KEY')
 os.environ['OPENAI_API_KEY']= OPENAI_API_KEY
 os.environ['OPENAI_MODEL_NAME']= 'gpt-4-0125-preview'
+
 
 ## Create a senior blog content researcher
 
@@ -36,4 +37,3 @@ blog_writer=Agent(
     ),
     tools=[yt_tool],
     allow_delegation=False)
-
